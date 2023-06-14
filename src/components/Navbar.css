@@ -1,0 +1,27 @@
+.navbar_container{
+    text-align: center;
+    padding: 20px;
+    margin: 0px;
+    display: flex;
+    background: #4a4c4e;
+    justify-content: space-between;
+}
+.links a.active{
+    color: #1392ec;
+}
+ .links{
+    margin: 0 0 0 5.5rem;
+} 
+
+.links a{
+    color: white;
+    text-decoration: none;
+    border-right: 1px solid white;
+    margin: auto  auto;
+    padding:0px 10px;
+}
+.social_media_icon a{
+    border-radius: 50%;
+    border: 2px solid white;
+    padding: auto;
+}

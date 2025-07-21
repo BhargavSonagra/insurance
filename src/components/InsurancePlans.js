@@ -1,77 +1,147 @@
-import React, { useState } from 'react';
-import '../index.css';
-import Data from './Pages';
+import { useState } from 'react';
+import { motion } from 'framer-motion';  // Import framer-motion
+import insurancePlans from './insurancePlansData';
 
 const InsurancePlans = () => {
-  const [activeTab, setActiveTab] = useState('Category');
+  const [activeTab, setActiveTab] = useState('all');
 
-  const handleTabClick = (category) => {
-    setActiveTab(category);
+  const categories = Object.keys(insurancePlans);
+
+  // Format the category name 
+  const formatCategoryName = (categoryKey) => {
+    const formatted = categoryKey
+      .replace(/([A-Z])/g, ' $1') 
+      .replace(/^./, (str) => str.toUpperCase());
+    return formatted;
   };
 
-  const filteredData = Data[0].PageInsurance.filter(
-    (item) => activeTab === 'Category' || item.catagory === activeTab
-  );
-
-  const [filter] = Data[0].PageInsurance.filter(
-    (item) => item.pageinsuranceheading && item.subtitle
-  );
-
-  const uniqueCategories = [...new Set(Data[0].PageInsurance.map((item) => item.catagory))];
-
-  return (
-    <div>
-      <div className="breadcrumbs">
-        <div className="container">
-          <a href="index.html">Home</a>
-          <img src="dummy/arrow.png" /> &nbsp;
-          <span>Insurance</span>
-        </div>
-      </div>
-      <div className="page">
-        <div className="container">
-          <main className="main-content">
-            <h1 className="entry-title">Choose your own insurance plan</h1>
-            <p>Nam posuere purus vitae est sollicitudin placerat. Praesent posuere porta dignissim. Phasellus viverra, urna a convallis tincidunt, ante mi tempor turpis, nec tempor mauris ligula ut sapien. Etiam euismod mi eu ante mollis commodo. Suspendisse porta nisi vitae dui hendrerit, eget ornare orci semper. Phasellus pharetra, erat sit amet rutrum porttitor, est eros consectetur elit, molestie consequat erat tellus in dui. Vestibulum a vehicula sem. Nullam commodo quis purus in volutpat. Integer semper lacus a lorem efficitur auctor curabitur tincidunt ligula non.</p>
-
-            <div className="filter-links filterable-nav">
-              <strong>Select Category: </strong>
-              <button
-                className={`wow fadeInRight ${activeTab === '' ? 'current' : ''}`}
-                onClick={() => handleTabClick('Category')}
+  // Function to display category, or all plans
+  const displayPlans = () => {
+    if (activeTab === 'all') {
+      // Return plans from all categories
+      return Object.keys(insurancePlans).map((category) => (
+        <motion.div
+          key={category}
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0, y: 40 },
+            visible: { opacity: 1, y: 0, transition: { duration: 1, ease: 'easeOut' } },
+          }}
+        >
+          <h3 className="text-center mt-5">{formatCategoryName(category)}</h3>
+          <div className="row">
+            {insurancePlans[category].map((plan, index) => (
+              <motion.div
+                key={index}
+                className="col-md-4 mb-3"
+                initial="hidden"
+                whileInView="visible"
+                variants={{
+                  hidden: { opacity: 0, y: 40 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 1, ease: 'easeOut' } },
+                }}
+                viewport={{ once: true, amount: 0.2 }}
               >
-                Show all
-              </button>
-              {uniqueCategories.map((category, id) => (
-                <button
-                  key={id}
-                  className={`wow fadeInRight ${activeTab === category ? 'current' : ''}`}
-                  onClick={() => handleTabClick(category)}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-
-            <div className="filterable-items d-flex flex-wrap">
-              {filteredData.map((item, id) => (
-                <div key={id} className={`insurance-item filterable-item ${item.catagory}`}>
-                  <div className="insurance-content p-4">
-                    <div className="insurance-icon">
-                      <i className={item.icon}></i>
-                    </div>
-                    <h3 className="insurance-title">{item.title}</h3>
-                    <p>{item.description}</p>
-                    <a href={item.link} className="button">
-                      See details
-                    </a>
+                <div className="card h-100 shadow-lg mt-3 bg-white text-dark border-none rounded">
+                  <div className="card-body">
+                    <h5 className="card-title fs-5 feature-title fw-bold">{plan.title}</h5>
+                    <p className="card-text fs-6"><i><b>{plan.description}</b></i></p>
+                    <p className="card-text fs-6">{plan.detailedDescription}</p>
                   </div>
                 </div>
-              ))}
-            </div>
-          </main>
-        </div>
-      </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      ));
+    } else {
+      // Return plans for the selected category
+      return (
+        <motion.div
+          className="row"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0, y: 40 },
+            visible: { opacity: 1, y: 0, transition: { duration: 1, ease: 'easeOut' } },
+          }}
+        >
+          {insurancePlans[activeTab].map((plan, index) => (
+            <motion.div
+              key={index}
+              className="col-md-4 mb-4"
+              initial="hidden"
+              whileInView="visible"
+              variants={{
+                hidden: { opacity: 0, y: 40 },
+                visible: { opacity: 1, y: 0, transition: { duration: 1, ease: 'easeOut' } },
+              }}
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <div className="card h-100 shadow-lg mt-3 bg-white text-dark rounded">
+                <div className="card-body">
+                  <h5 className="card-title fs-5 feature-title fw-bold">{plan.title}</h5>
+                  <p className="card-text fs-6"><i><b>{plan.description}</b></i></p>
+                  <p className="card-text fs-6">{plan.detailedDescription}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      );
+    }
+  };
+
+  return (
+    <div className="container my-5">
+      <h2 className="mb-4 text-center section-title">Our Insurance Plans</h2>
+
+      {/* Tab Buttons */}
+      <motion.ul
+        className="nav nav-tabs justify-content-center mb-4 "
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0, y: -40 },
+          visible: { opacity: 1, y: 0, transition: { duration: 1, ease: 'easeOut' } },
+        }}
+      >
+        <li className="nav-item">
+          <button
+            className={`nav-link font-weight-bold ${activeTab === 'all' ? 'active' : ''}`}
+            onClick={() => setActiveTab('all')} // When 'All' is clicked, show all plans
+          >
+            <strong>All Plans</strong>
+          </button>
+        </li>
+        {categories.map((category) => (
+          <li className="nav-item" key={category}>
+            <button
+              className={`nav-link font-weight-bold ${activeTab === category ? 'active' : ''}`}
+              onClick={() => setActiveTab(category)} 
+            >
+              <strong>{formatCategoryName(category)}</strong>
+            </button>
+          </li>
+        ))}
+      </motion.ul>
+
+      {/* Display Plan Cards */}
+      <motion.div
+        key={activeTab} 
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { duration: 1, ease: 'easeOut' } },
+        }}
+      >
+        <h5 className="card-title fs-1 text-center text-decoration-underline mt-5 fw-bold">
+          {formatCategoryName(activeTab)}
+        </h5>
+        {displayPlans()}
+      </motion.div>
     </div>
   );
 };

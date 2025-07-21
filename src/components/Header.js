@@ -1,18 +1,19 @@
 import React from 'react'
 import '../index.css'
-import '../assets/style.css'
+import '../components/Header.css'
 import './Navbar.css'
+import { Link } from 'react-router-dom'
 const Header = () => {
 	return (
 
-		<header className="site-header">
-			<div className="top-header ">
+		<header className="m-3">
+			<div className=" ">
 				<div className="container d-flex justify-content-between">
-					<a href="index.html" id="branding">
+					<a id="branding">
 						<img src="dummy/logo.png" alt="Company Name" className="logo" />
 						<div className="logo-text">
-							<h1 className="site-title">ABC</h1>
-							<small className="description">This is ABC Company</small>
+							<h1 className="site-title">EverSafe Insurance</h1>
+							<small className="description">Ever Safe, Ever Secure</small>
 						</div>
 					</a>
 					<div className="right-section pull-right">

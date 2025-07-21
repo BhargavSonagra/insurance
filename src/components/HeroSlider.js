@@ -1,50 +1,103 @@
-import React from 'react'
+import React from 'react';
+import { motion } from 'framer-motion';
 import '../index.css';
+
 const HeroSlider = () => {
+  return (
+    <div className="hero hero-slider">
+      <motion.ul
+        className="slides"
+        initial="hidden"
+        whileInView="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { duration: 1.5 },
+          },
+        }}
+        viewport={{ once: false, amount: 0.3 }} // Trigger every time it's in view
+      >
+        <motion.li
+          style={{
+            width: "100%",
+            height: "50%",
+            float: "left",
+            marginRight: "-100%",
+            position: "relative",
+            opacity: "0.6",
+            display: "block",
+            zIndex: "2",
+            backgroundImage: "url('dummy/slide-3.jpg')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+          initial="hidden"
+          whileInView="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { duration: 2 },
+            },
+          }}
+          viewport={{ once: false, amount: 0.3 }}
+        >
+          <motion.div
+            className="container w-100 text-center text-dark"
+            initial="hidden"
+            whileInView="visible"
+            variants={{
+              hidden: { scale: 0.9, opacity: 0 },
+              visible: {
+                scale: 1,
+                opacity: 1,
+                transition: { duration: 1, delay: 0.5 },
+              },
+            }}
+            viewport={{ once: false, amount: 0.3 }}
+          >
+            <div className="slide-content w-100">
+              <motion.h2
+                className="display-1"
+                initial="hidden"
+                whileInView="visible"
+                variants={{
+                  hidden: { y: 50, opacity: 0 },
+                  visible: {
+                    y: 0,
+                    opacity: 1,
+                    transition: { duration: 1, delay: 1 },
+                  },
+                }}
+                viewport={{ once: false, amount: 0.3 }}
+              >
+                Get your <strong className="text-primary">EverSafe</strong>
+              </motion.h2>
+              <motion.h4
+                className="lead text-dark font-weight-normal display-5"
+                initial="hidden"
+                whileInView="visible"
+                variants={{
+                  hidden: { x: -100, opacity: 0 },
+                  visible: {
+                    x: 0,
+                    opacity: 1,
+                    transition: { duration: 1, delay: 1.5 },
+                  },
+                }}
+                viewport={{ once: false, amount: 0.3 }}
+              >
+                We believe in securing your future. Our range of insurance products
+                are designed to offer protection and peace of mind for you and your
+                loved ones.
+              </motion.h4>
+            </div>
+          </motion.div>
+        </motion.li>
+      </motion.ul>
+    </div>
+  );
+};
 
-	return (
-		<div className="hero hero-slider">
-			<ul className="slides">
-				<li data-bg-image="dummy/slide-1.jpg" className="flex-active-slide" style={{
-					backgroundImage:
-						"url('dummy/slide-1.jpg')", "width": "100%", "float": "left", "marginRight": "-100%", "position": "relative", "opacity": "1", "display": "block", "zIndex": "1"
-				}}>
-					<div className="container">
-						<div className="slide-content">
-							<h2 className="slide-title">Get your <strong>Life Insurance</strong></h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus quos cumque odio soluta harum error sequi laudantium, est nam perspiciatis eveniet maxime, esse possimus architecto sunt natus reprehenderit debitis fugit.</p>
-							<a href="#" className="button">Get a quote</a>
-						</div>
-					</div>
-				</li>
-				<li data-bg-image="dummy/slide-2.jpg" style={{
-					backgroundImage:
-						"url('dummy/slide-2.jpg')", "width": "100%", "float": "left", "marginRight": "-100%", "position": "relative", "opacity": "1", "display": "block", "zIndex": "1"
-				}}>
-					<div className="container">
-						<div className="slide-content">
-							<h2 className="slide-title">Get your <strong>Life Insurance</strong></h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus quos cumque odio soluta harum error sequi laudantium, est nam perspiciatis eveniet maxime, esse possimus architecto sunt natus reprehenderit debitis fugit.</p>
-							<a href="#" className="button">Get a quote</a>
-						</div>
-					</div>
-				</li>
-
-				<li data-bg-image="dummy/slide-3.jpg" style={{
-					backgroundImage:
-						"url('dummy/slide-3.jpg')", "width": "100%", "float": "left", "marginRight": "-100%", "position": "relative", "opacity": "1", "display": "block", "zIndex": "2"
-				}}>
-					<div className="container">
-						<div className="slide-content">
-							<h2 className="slide-title">Get your <strong>Life Insurance</strong></h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus quos cumque odio soluta harum error sequi laudantium, est nam perspiciatis eveniet maxime, esse possimus architecto sunt natus reprehenderit debitis fugit.</p>
-							<a href="#" className="button">Get a quote</a>
-						</div>
-					</div>
-				</li>
-			</ul>
-			</div>
-	)
-}
-
-export default HeroSlider
+export default HeroSlider;

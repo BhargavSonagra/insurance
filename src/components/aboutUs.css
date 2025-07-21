@@ -41,57 +41,88 @@ small {
     margin-bottom: 10px;
 }
 
-.features{
-    /* border: 2px solid red; */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 -15px;
+  position: relative;
+  z-index: 1;
+  zoom: 1;
 }
 
-.feature-numbered{
-    /* border: 2px solid red;  */
-    margin: 10px; 
-    padding: 10px;
-    box-sizing: border-box;
-    text-align: center;
+.features:after {
+  content: " ";
+  position: absolute;
+  top: 50px;
+  left: 15px;
+  right: 15px;
+  height: 50px;
+  z-index: -1;
+  /* background: url(images/dotted.png) repeat-x; */ /* Uncomment if needed */
+  display: block;
+  overflow: hidden;
 }
 
-.feature-numbered .num{
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    border: 2px solid #0f75bd;
-    color: #0f75bd;
-    text-align: center;
-    font-size: 36px;
-    font-size: 2.25em;
-    line-height: 1.8;
-    font-weight: 400;
-    margin: 0 auto 20px;
-    background-color: white;
-    box-shadow: 0 0 0 10px white;
+@media screen and (max-width: 768px) {
+  .features:after {
+    display: none;
+  }
 }
 
-.features .feature-numbered p{
-    /* font-size: medium; */
-    line-height: 2;
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-}
-.features .feature-numbered h2{
-    font-size: large;
-    font-size: 1.25em;
-    color: #0f75bd;
-    font-weight: 400;
-
+.feature-numbered {
+  width: 90%;
+  padding: 15px;
+  margin: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }
 
-.features .feature-numbered h3{
-    color: #768089;
+@media screen and (max-width: 480px) {
+  .feature-numbered {
+    width: 100%;
+  }
+}
 
+.feature-numbered .num {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid #0f75bd;
+  background-color: white;
+  color: #0f75bd;
+  font-size: 2.25em;
+  font-weight: 400;
+  line-height: 1.8;
+  margin: 10px auto 20px;
+  padding: 10px;
+  box-shadow: 0 0 0 10px white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.feature-numbered h2,
+.feature-title {
+  font-size: 1.25em;
+  color: #0f75bd;
+  font-weight: 400;
+  margin-bottom: 0.5em;
+}
+
+.feature-numbered h3 {
+  color: #768089;
+}
+
+.feature-numbered p {
+  line-height: 2;
+  margin: 1em 0;
 }
 
 .history{

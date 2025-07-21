@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import '../src/assets/style.css'
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom"

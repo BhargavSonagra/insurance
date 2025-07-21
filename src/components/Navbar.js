@@ -10,7 +10,6 @@ const Navbar = () => {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/about">About us</NavLink>
         <NavLink to="/insurancePlans">Insurance plans</NavLink>
-        <NavLink to="/Resources">Resources</NavLink>
         <NavLink to="/contact">Contact</NavLink>
       </div>
       {/* <div className="social-links">
@@ -19,7 +18,7 @@ const Navbar = () => {
         <a href="#"><i className="fa fa-google-plus"></i></a>
         <a href="#"><i className="fa fa-pinterest"></i></a>
       </div> */}
-    </div>
+      </div>
   )
 }
 

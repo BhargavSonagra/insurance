@@ -21,25 +21,20 @@ summary {
   display: block;
 }
 
-audio,
-canvas,
-video {
-  display: inline-block;
-}
-
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-
 [hidden],
 template {
   display: none;
 }
 
+body {
+  margin: 0;
+  background: #bfbdbd5e;
+}
+
+
 html {
-  background: #fff;
-  color: #000;
+  /* background: #fff; */
+  /* color: #000; */
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
@@ -52,9 +47,6 @@ textarea {
   font-family: sans-serif;
 }
 
-body {
-  margin: 0;
-}
 
 a {
   background: transparent;
@@ -242,6 +234,13 @@ input::-moz-focus-inner {
   padding: 0;
 }
 
+.tab-link {
+  color: lightblue;  /* Set the color to light blue */
+}
+.tab-link.active {
+  color: darkblue;   /* Active tab could have a darker shade of blue */
+}
+
 textarea {
   overflow: auto;
   vertical-align: top;
@@ -361,7 +360,7 @@ form input[type="reset"]:focus {
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
-  *zoom: 1;
+  zoom: 1;
 }
 
 .container:after {
@@ -395,7 +394,7 @@ form input[type="reset"]:focus {
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
-  *zoom: 1;
+  zoom: 1;
 }
 
 .container-fluid:after {
@@ -409,7 +408,7 @@ form input[type="reset"]:focus {
 .row {
   margin-left: -15px;
   margin-right: -15px;
-  *zoom: 1;
+  zoom: 1;
 }
 
 .row:after {
@@ -1625,7 +1624,7 @@ form input[type="reset"]:focus {
 
 .site-header .bottom-header {
   background-color: #4a4c4e;
-  *zoom: 1;
+  zoom: 1;
   padding: 20px 0;
 }
 
@@ -1768,7 +1767,7 @@ form input[type="reset"]:focus {
 
 .main-navigation .menu li.current-menu-item a {
   color: #1392ec;
-  
+
 }
 
 .social-links {
@@ -1787,7 +1786,7 @@ form input[type="reset"]:focus {
   display: inline-block;
   -webkit-transition: .3s ease;
   transition: .3s ease;
-  
+
 }
 
 .social-links a:hover {
@@ -1818,7 +1817,7 @@ form input[type="reset"]:focus {
 
 .mobile-navigation .menu .current-menu-item a {
   color: #1392ec;
-  
+
 }
 
 .breadcrumbs {
@@ -1844,11 +1843,12 @@ form input[type="reset"]:focus {
 .hero-slider {
   position: relative;
   margin-bottom: 50px;
+  scroll-snap-align: start;
 }
 
 .hero-slider .slides {
   list-style: none;
-  *zoom: 1;
+  zoom: 1;
 }
 
 .hero-slider .slides:after {
@@ -1870,7 +1870,7 @@ form input[type="reset"]:focus {
 
 .hero-slider .slide-content {
   border-radius: 3px;
-  background-color: white;
+  background-color: rgba(226, 219, 219, 0.204);
   width: 25%;
   padding: 30px;
   margin-top: 50px;
@@ -1905,7 +1905,7 @@ form input[type="reset"]:focus {
 .hero-slider .slide-content p {
   line-height: 2;
   margin-bottom: 50px;
-} 
+}
 
 .hero-slider .flex-control-nav {
   list-style: none;
@@ -1929,7 +1929,7 @@ form input[type="reset"]:focus {
   overflow: hidden;
   text-indent: -99999px;
   cursor: pointer;
-  
+
   text-decoration: none;
 }
 
@@ -1937,34 +1937,39 @@ form input[type="reset"]:focus {
   background-color: #0f75bd;
 }
 
+
+.section-subtitle {
+  font-weight: 500;
+  margin: 50px;
+  text-align: center;
+  display: block;
+  font-size: 1.875em;
+  color: #9ba1a6;
+}
+
+.section-title {
+  font-weight: 800;
+  font-size: 4em;
+  margin-bottom: 1.5rem;
+}
+
+
 .fullwidth-block {
   padding: 50px 0;
 }
 
-.section-title,
-.section-subtitle {
-  font-weight: 300;
-  margin-bottom: 50px;
-  text-align: center;
-  display: block;
-}
-
-.section-title {
-  font-size: 48px;
-  font-size: 3em;
-}
-
-.section-subtitle {
-  font-size: 30px;
-  font-size: 1.875em;
-  color: #9ba1a6;
-  margin-top: -50px;
-  margin-bottom: 50px;
-}
 
 .feature {
   margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  padding: 2rem;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  height: 100%;
+  /* width: 110%; */
 }
 
 .feature i {
@@ -1973,6 +1978,7 @@ form input[type="reset"]:focus {
   color: #0f75bd;
   display: inline-block;
   margin-bottom: 20px;
+
 }
 
 .feature .feature-title {
@@ -1982,6 +1988,7 @@ form input[type="reset"]:focus {
   color: #0f75bd;
   font-weight: 400;
 }
+
 
 .text-center {
   text-align: center;
@@ -2062,7 +2069,7 @@ form input[type="reset"]:focus {
   color: #768089;
   -webkit-transition: .3s ease;
   transition: .3s ease;
-  
+
 }
 
 .news .entry-title a:hover {
@@ -2086,7 +2093,7 @@ form input[type="reset"]:focus {
 
 .testimonial-slider .slides {
   list-style: none;
-  *zoom: 1;
+  zoom: 1;
 }
 
 .testimonial-slider .slides:after {
@@ -2135,7 +2142,7 @@ form input[type="reset"]:focus {
   width: 15px;
   height: 15px;
   cursor: pointer;
-  
+
 }
 
 .testimonial-slider .flex-control-nav li a.flex-active {
@@ -2143,6 +2150,9 @@ form input[type="reset"]:focus {
 }
 
 .partners {
+  width: 100%;
+  height: auto;
+  /* border: 2px solid red; */
   text-align: center;
   margin-top: 50px;
 }
@@ -2170,87 +2180,17 @@ form input[type="reset"]:focus {
 .page .row {
   margin: 25px -15px;
 }
-
-.features {
-  *zoom: 1;
-  margin: 0 -15px;
-  position: relative;
-  z-index: 1;
-}
-
-.features:after {
-  content: " ";
-  clear: both;
-  display: block;
-  overflow: hidden;
-  height: 0;
-}
-
-.features:after {
-  content: " ";
-  height: 50px;
-  top: 50px;
-  left: 15px;
-  right: 15px;
-  position: absolute;
-  /* background: url(images/dotted.png) repeat-x; */
-  z-index: -1;
-}
-
-@media screen and (max-width: 768px) {
-  .features:after {
-    display: none;
-  }
-}
-
-.features .feature-numbered {
-  width: 25%;
-  float: left;
-  padding: 15px;
-  text-align: center;
-}
-
-@media screen and (max-width: 768px) {
-  .features .feature-numbered {
-    width: 50%;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .features .feature-numbered {
-    width: 100%;
-  }
-}
-
-.features .feature-numbered .num {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  border: 2px solid #0f75bd;
-  color: #0f75bd;
-  text-align: center;
-  font-size: 36px;
-  font-size: 2.25em;
-  line-height: 1.8;
-  font-weight: 400;
-  margin: 0 auto 20px;
-  background-color: white;
-  box-shadow: 0 0 0 10px white;
-}
-
-.features .feature-numbered .feature-title {
-  font-size: 20px;
-  font-size: 1.25em;
-  color: #0f75bd;
-  font-weight: 400;
-}
-
 .team {
   text-align: center;
   margin-top: 50px;
 }
 
+img:hover {
+  scale: 1.5;
+}
+
 .team .team-image {
+
   overflow: hidden;
   border-radius: 50%;
   width: 230px;
@@ -2286,7 +2226,7 @@ form input[type="reset"]:focus {
 }
 
 .team .social-links a {
-  
+
   background: #0f75bd;
   border: none;
   font-size: 14px;
@@ -2308,7 +2248,7 @@ form input[type="reset"]:focus {
 }
 
 .filterable-nav a {
-  
+
   padding: 10px 20px;
   border-radius: 3px;
   border: 1px solid #ccc;
@@ -2331,11 +2271,14 @@ form input[type="reset"]:focus {
   transition: .3s ease;
 }
 
+/* Insurance Item Layout */
 .insurance-item {
   width: 33.3333%;
   padding: 15px;
+  box-sizing: border-box;
 }
 
+/* Responsive Breakpoints */
 @media screen and (max-width: 990px) {
   .insurance-item {
     width: 50%;
@@ -2348,25 +2291,36 @@ form input[type="reset"]:focus {
   }
 }
 
-.insurance-item .insurance-icon {
-  font-size: 48px;
+/* Icon Style */
+.insurance-icon {
   font-size: 3em;
   color: #0f75bd;
   margin-bottom: 20px;
 }
 
-.insurance-item .insurance-content {
-  background: #f1f1f1;
-  border-radius: 3px;
-  padding: 30px;
+/* Content Block */
+.insurance-content {
+  overflow-x: hidden;
+  align-items:  center;   
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
   text-align: center;
+  margin: auto;
+  box-sizing: border-box;
+  /* Optional Enhancements (uncomment if needed) */
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); */
+  /* border: 2px solid red; */
 }
 
-.insurance-item .insurance-title {
-  font-size: 36px;
+
+/* Title Styling */
+.insurance-title {
   font-size: 2.25em;
   font-weight: 300;
   color: #0f75bd;
+  margin-bottom: 10px;
 }
 
 .pagination {
@@ -2490,7 +2444,7 @@ form input[type="reset"]:focus {
 
 .site-footer .widget-area a {
   color: #768089;
-  
+
 }
 
 .site-footer .widget-area ul {
@@ -2510,7 +2464,7 @@ form input[type="reset"]:focus {
 }
 
 .site-footer .footer-navigation a {
-  
+
   text-decoration: none;
   color: white;
   padding: 0 10px;

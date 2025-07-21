@@ -4,7 +4,7 @@ import '../index.css';
 const ContactForm = () => {
     return (
         <div>
-            <div className="col-md-12 col-lg-6 pt-5">
+            <div className="col col-lg-6 pt-2">
                 <h2 className="section-title text-left">Contact form</h2>
                 <form action="#" className="contact-form">
                     <div className="row">

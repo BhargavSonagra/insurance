@@ -59,7 +59,7 @@ const OurInsurance = () => {
         {/* CTA Button */}
         <motion.button
           onClick={() => navigate('/InsurancePlans')}
-          className="btn btn-primary btn-lg mt-4"
+          className="btn btn-primary btn-lg mt-4 mb-5"
           style={{ fontSize: '18px', padding: '15px 50px' }}
           initial="hidden"
           whileInView="visible"

@@ -1,18 +1,15 @@
 
 import '../index.css';
-import { NavLink } from 'react-router-dom';
+import '../components/FooterNav.css'
 
-import insurancePlans from './insurancePlansData';
+import { Link, NavLink } from 'react-router-dom';
 
-const categories = Object.keys(insurancePlans);
-  console.log(categories); 
+
 const FooterNav = () => {
-
-
 
 	return (
 		<div className="site-footer">
-			<div className="mb-1">
+			<div className="p-3">
 				<div className="container">
 					<div className="row d-flex flex-center justify-content-evenly">
 						<div className="col-xs-12 col-sm-4 col-md-2">
@@ -59,16 +56,20 @@ const FooterNav = () => {
 				</div>
 			</div>
 
-			<div className="bottom-footer">
-
-				<div className='links fs-5'>
-					<NavLink to="/">Home</NavLink>
-					<NavLink to="/about">About us</NavLink>
-					<NavLink to="/insurancePlans">Insurance plans</NavLink>
-					<NavLink to="/contact">Contact</NavLink>
+			<footer className="navbar ">
+				<div className="container">
+					<div className="navbar-content d-flex justify-content-center align-items-center  mx-auto p-2">
+						<nav className="navbar-links d-flex gap-2 fs-4 flex-wrap">
+							<Link to="/" className="navbar-link">Home</Link>
+							<Link to="/about" className="navbar-link">About</Link>
+							<Link to="/insuranceplans" className="navbar-link">Insurance Plans</Link>
+							<Link to="/contact" className="navbar-link">Contact</Link>
+						</nav>
+					</div>
 				</div>
-				<div className="colophon">Copyright 2014 Company name. Designed by Themezy. All rights reserved.</div>
-			</div>
+			<div className="colophon m-3  mx-auto">Copyright 2025 EverSafe Insurance. Designed by Bhargav. All rights reserved.</div>
+			</footer>
+
 		</div>
 	)
 }

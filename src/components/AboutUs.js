@@ -1,7 +1,6 @@
 
 import '../index.css';
 import '../components/aboutUs.css';
-import Team from "./Team";
 import data from './aboutdata';
 import { Link } from "react-router-dom";
 
@@ -55,7 +54,6 @@ const AboutUs = () => {
           ))}
         </div>
       </div>
-      <Team />
     </div>
   );
 }

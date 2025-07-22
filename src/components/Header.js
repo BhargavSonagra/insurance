@@ -1,36 +1,29 @@
-import React from 'react'
-import '../index.css'
-import '../components/Header.css'
-import './Navbar.css'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../index.css';
+import '../components/Header.css';
+import './Navbar.css';
+
 const Header = () => {
-	return (
+  return (
+    <header className="m-3">
+      <div className="container d-flex justify-content-between">
+        <Link to="/" id="branding" className="d-flex align-items-center">
+          <img src="dummy/logo.png" alt="EverSafe Insurance Logo" className="logo" />
+          <div className="logo-text">
+            <h1 className="site-title">EverSafe Insurance</h1>
+            <small className="description">Ever Safe, Ever Secure</small>
+          </div>
+        </Link>
+        <div className="right-section">
+          <a href="tel:+18234249134" className="phone">
+            <img src="dummy/icon-phone.png" alt="Phone Icon" className="icon" />
+            +1 823 424 9134
+          </a>
+        </div>
+      </div>
+    </header>
+  );
+};
 
-		<header className="m-3">
-			<div className=" ">
-				<div className="container d-flex justify-content-between">
-					<a id="branding">
-						<img src="dummy/logo.png" alt="Company Name" className="logo" />
-						<div className="logo-text">
-							<h1 className="site-title">EverSafe Insurance</h1>
-							<small className="description">Ever Safe, Ever Secure</small>
-						</div>
-					</a>
-					<div className="right-section pull-right">
-						<a href="#" className="phone"><img src="dummy/icon-phone.png" className="icon" />+1 823 424 9134</a>
-
-						<form action="#" className="search-form">
-							<input type="text" placeholder="Search..." />
-							<button type="submit"><img src="dummy/icon-search.png" alt="" /></button>
-						</form>
-					</div>
-				</div>
-			</div>
-
-		</header>
-
-		
-	)
-}
-
-export default Header
+export default Header;

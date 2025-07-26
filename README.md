@@ -1,6 +1,11 @@
 <h1><b>Insurance Website </b></h1> 
 <img width="1000" height="852" alt="eversafe SS (1)" src="https://github.com/user-attachments/assets/c8a02bce-dbf9-4719-9072-5b3dd82075d7" />
 
+# Eversafe Insurance Website
+
+ **Live Demo**: [https://eversafeinsurance.netlify.app](https://eversafeinsurance.netlify.app)
+
+
 <b>Description:</b>
 A responsive  – React & Bootstrap - front-end insurance website built with React and Bootstrap. Features include dynamic routing, interactive UI components, and responsive design. Designed to simulate a user-friendly platform for browsing policies, getting quotes, and learning about insurance plans.<br/>
 
@@ -12,7 +17,4 @@ A responsive  – React & Bootstrap - front-end insurance website built with Rea
 
 
 ### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 

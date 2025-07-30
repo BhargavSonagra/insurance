@@ -18,7 +18,6 @@ const FooterNav = () => {
 								<address className='fs-5'> Company Name INC. 523 Burt Street, Omaha
 								</address>
 								<ul>
-									<li className='fs-5' href="#">Phone: +1 823 424 9134</li>
 									<li className='fs-5' href="mailto:info@company.com">info@company.com</li>
 								</ul>
 							</div>
@@ -58,12 +57,12 @@ const FooterNav = () => {
 
 			<footer className="navbar ">
 				<div className="container">
-					<div className="navbar-content d-flex justify-content-center align-items-center  mx-auto p-2">
+					<div className="navbar-content d-flex justify-content-center align-items-center  mx-auto p-3">
 						<nav className="navbar-links d-flex gap-2 fs-4 flex-wrap">
 							<Link to="/" className="navbar-link">Home</Link>
-							<Link to="/about" className="navbar-link">About</Link>
-							<Link to="/insuranceplans" className="navbar-link">Insurance Plans</Link>
-							<Link to="/contact" className="navbar-link">Contact</Link>
+							<Link to="/about" className="navbar-link"> About</Link>
+							<Link to="/insuranceplans" className="navbar-link"> Insurance Plans</Link>
+							<Link to="/contact" className="navbar-link"> Contact</Link>
 						</nav>
 					</div>
 				</div>

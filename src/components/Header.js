@@ -15,12 +15,7 @@ const Header = () => {
             <small className="description">Ever Safe, Ever Secure</small>
           </div>
         </Link>
-        <div className="right-section">
-          <a href="tel:+18234249134" className="phone">
-            <img src="dummy/icon-phone.png" alt="Phone Icon" className="icon" />
-            +1 823 424 9134
-          </a>
-        </div>
+       
       </div>
     </header>
   );

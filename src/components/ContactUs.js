@@ -28,7 +28,7 @@ const ContactUs = () => {
                     <p>Company Name INC.<br />
                       523 Burt Street,<br />
                       Omaha<br />
-                      Phone: +1 823 424 9134<br />
+                      
                       info@company.com</p>
                   </div>
                 </address>
